@@ -2,8 +2,9 @@ const Items=require('../model/itemsSchema')
 const AddItems = async (req, res) => {
     try {
         const data = req.body;
-        const { name, bal } = data;
-        const existname = await Items.findOne({ name });
+        const { itemname, bal } = data;
+        const existname = await Items.findOne({ itemname });
+          console.log(existname)
         if (existname) {
             return res.status(400).json({ message: 'Item with this name already exists' });
         }
@@ -18,6 +19,14 @@ const AddItems = async (req, res) => {
     }
 };
 
+const getData=async(req,res)=>{
+    try {
+        const items=await Items.find()
+        res.status(200).json({ message: 'Item added successfully', items });
+    } catch (error) {
+        res.status(500).json({ message: 'Server error, please try again later' });
+    }
+}
 
 
 
@@ -29,4 +38,4 @@ const AddItems = async (req, res) => {
 
 
 
-module.exports={AddItems}
+module.exports={AddItems,getData}
