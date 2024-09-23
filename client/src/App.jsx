@@ -14,7 +14,7 @@ function App() {
     <div className='w-full  flex overflow-scroll'>  
       <SideBar/>
 <Routes>
-  <Route path='/' element={<SaleInvoices />} />
+  <Route path='/sale' element={<SaleInvoices />} />
   <Route path='/add' element={<AddSales />} />
 
 </Routes>

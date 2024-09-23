@@ -25,14 +25,11 @@ const Transaction = () => {
   console.log(transactions, 'transs');
 
   const filteredTransactions = transactions.filter((transaction) =>
-  
-    transaction.userId.name.toLowerCase().includes(searchTerm.toLowerCase())
+  transaction.userId.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  
 
-  // const filteredTransactions = transactions.filter((transaction) =>
-  //   console.log(transaction.userId.name,"tr")  
-
-  // );
+ 
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">TRANSACTIONS</h1>
