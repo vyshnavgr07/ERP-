@@ -4,9 +4,11 @@ import TextWithIcons from "../shared/TextWithIcons";
 import SalesHeader from "../components/SalesHeader";
 import FinanceComp from "../components/FinanceComp";
 import Transaction from "../components/Transaction";
+import Sidebar from "../components/SideBar";
 const SaleInvoices = () => {
   return (
-    <div className="w-full">
+    <div className="w-full ">
+      
       {/* headerpage....... */}
      <SalesHeader/>
      <FinanceComp/>

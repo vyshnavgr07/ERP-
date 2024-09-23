@@ -4,9 +4,9 @@ const mongoose=require('mongoose');
 const transactionSchema=mongoose.Schema({
     userId:{
         type:mongoose.Schema.ObjectId,
-        ref:"User",                                    
+        ref:"Customer",                                    
         required:true
-    },
+    },                                                       
     items: [
         {
           itemId: {
@@ -19,10 +19,33 @@ const transactionSchema=mongoose.Schema({
             required: true,
             min: 0, 
           },
+          unit:{
+            type:String,
+            default:"Bag"
+      
+          },
+          Discount:{
+            type:Number,
+            required: true,
+         },
+         Amount:{
+          type:Number,
+          required: true,
+         }
+
         },
-      ],
+      ], 
+      invoiceNumber:{            
+        type:String,
+        required: true,
+       },
+       Date:{
+        type:Date,
+        default:Date.now
+       },
     totalAmount:{
         type:Number,
+        required: true,
     },
 
 
